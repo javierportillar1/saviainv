@@ -518,7 +518,6 @@ export function Inventario({ menuItems, onUpdateMenuItem, onCreateMenuItem, onDe
               );
             })}
             </div>
-          </div>
         )}
         
         {filteredItems.length === 0 && (
