@@ -266,6 +266,42 @@ const INVENTARIABLE_ITEMS: MenuItem[] = [
   { id: 'inv-te-matcha', nombre: 'Té matcha', precio: 0, categoria: 'Bebidas', stock: 200, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
   { id: 'inv-cacao', nombre: 'Cacao puro', precio: 0, categoria: 'Bebidas', stock: 300, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
   { id: 'inv-proteina', nombre: 'Proteína whey', precio: 0, categoria: 'Bebidas', stock: 500, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+
+  // Salsas y aderezos
+  { id: 'inv-salsa-verde', nombre: 'Salsa verde', precio: 0, categoria: 'Salsas', stock: 800, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-mayonesa-rostizada', nombre: 'Mayonesa rostizada', precio: 0, categoria: 'Salsas', stock: 600, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-guacamole', nombre: 'Guacamole', precio: 0, categoria: 'Salsas', stock: 400, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-pico-gallo', nombre: 'Pico de gallo', precio: 0, categoria: 'Salsas', stock: 500, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-frijol-refrito', nombre: 'Frijol refrito', precio: 0, categoria: 'Salsas', stock: 700, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-salsa-brava', nombre: 'Salsa brava', precio: 0, categoria: 'Salsas', stock: 300, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-sour-cream', nombre: 'Sour cream', precio: 0, categoria: 'Salsas', stock: 400, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+
+  // Panes y bases
+  { id: 'inv-pan-sandwich', nombre: 'Pan para sandwich', precio: 0, categoria: 'Panes', stock: 50, inventarioCategoria: 'Inventariables', inventarioTipo: 'cantidad', unidadMedida: 'unidad' },
+  { id: 'inv-arroz', nombre: 'Arroz', precio: 0, categoria: 'Bases', stock: 2000, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-pasta', nombre: 'Pasta', precio: 0, categoria: 'Bases', stock: 1500, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-quinua', nombre: 'Quinua', precio: 0, categoria: 'Bases', stock: 800, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+
+  // Otros ingredientes
+  { id: 'inv-parmesano', nombre: 'Queso parmesano', precio: 0, categoria: 'Lácteos', stock: 300, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-chips-arracacha', nombre: 'Chips de arracacha', precio: 0, categoria: 'Snacks', stock: 200, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-semillas-girasol', nombre: 'Semillas de girasol', precio: 0, categoria: 'Semillas', stock: 300, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-semillas-calabaza', nombre: 'Semillas de calabaza', precio: 0, categoria: 'Semillas', stock: 250, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-miel-uvilla', nombre: 'Miel de uvilla', precio: 0, categoria: 'Especias', stock: 200, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-albahaca', nombre: 'Albahaca', precio: 0, categoria: 'Vegetales', stock: 100, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-hierbabuena', nombre: 'Hierbabuena', precio: 0, categoria: 'Vegetales', stock: 150, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-menta', nombre: 'Menta', precio: 0, categoria: 'Vegetales', stock: 120, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-perejil', nombre: 'Perejil', precio: 0, categoria: 'Vegetales', stock: 100, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-remolacha', nombre: 'Remolacha', precio: 0, categoria: 'Vegetales', stock: 600, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-mora', nombre: 'Mora', precio: 0, categoria: 'Frutas', stock: 400, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-manzana-verde', nombre: 'Manzana verde', precio: 0, categoria: 'Frutas', stock: 800, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-naranja', nombre: 'Naranja', precio: 0, categoria: 'Frutas', stock: 1000, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-limon', nombre: 'Limón', precio: 0, categoria: 'Frutas', stock: 500, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-sabila', nombre: 'Sábila', precio: 0, categoria: 'Vegetales', stock: 200, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-zanahoria', nombre: 'Zanahoria', precio: 0, categoria: 'Vegetales', stock: 800, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-maiz-tierno', nombre: 'Maíz tierno', precio: 0, categoria: 'Vegetales', stock: 600, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-carne-desmechada', nombre: 'Carne desmechada', precio: 0, categoria: 'Proteínas', stock: 700, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
+  { id: 'inv-pechuga-pollo', nombre: 'Pechuga de pollo', precio: 0, categoria: 'Proteínas', stock: 1000, inventarioCategoria: 'Inventariables', inventarioTipo: 'gramos', unidadMedida: 'g' },
 ];
 
 // Combinar todos los items

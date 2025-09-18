@@ -16,6 +16,7 @@ export function Inventario({ menuItems, onUpdateMenuItem, onCreateMenuItem, onDe
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [inventoryFilter, setInventoryFilter] = useState<'all' | 'inventariables' | 'no-inventariables'>('all');
   const [editingItem, setEditingItem] = useState<MenuItem | null>(null);
+  const [showPriceEditor, setShowPriceEditor] = useState(false);
   const [newItem, setNewItem] = useState<{
     nombre: string;
     precio: number | null;
@@ -357,7 +358,7 @@ export function Inventario({ menuItems, onUpdateMenuItem, onCreateMenuItem, onDe
         </div>
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex justify-between items-center">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
           <input
@@ -369,24 +370,33 @@ export function Inventario({ menuItems, onUpdateMenuItem, onCreateMenuItem, onDe
             style={{ '--tw-ring-color': COLORS.accent } as React.CSSProperties}
           />
         </div>
-        <button
-          onClick={() =>
-            setNewItem({
-              nombre: '',
-              precio: null,
-              categoria: '',
-              inventarioCategoria: 'No inventariables',
-              inventarioTipo: 'cantidad',
-              unidadMedida: 'kg',
-              stock: null,
-              descripcion: '',
-            })
-          }
-          className="flex items-center gap-1 px-4 py-2 rounded-lg text-white hover:opacity-90"
-          style={{ backgroundColor: COLORS.accent }}
-        >
-          <Plus size={16} /> Agregar producto
-        </button>
+        <div className="flex gap-2 ml-4">
+          <button
+            onClick={() => setShowPriceEditor(true)}
+            className="flex items-center gap-1 px-4 py-2 rounded-lg text-white hover:opacity-90"
+            style={{ backgroundColor: COLORS.dark }}
+          >
+            <Edit3 size={16} /> Editar Precios
+          </button>
+          <button
+            onClick={() =>
+              setNewItem({
+                nombre: '',
+                precio: null,
+                categoria: '',
+                inventarioCategoria: 'No inventariables',
+                inventarioTipo: 'cantidad',
+                unidadMedida: 'kg',
+                stock: null,
+                descripcion: '',
+              })
+            }
+            className="flex items-center gap-1 px-4 py-2 rounded-lg text-white hover:opacity-90"
+            style={{ backgroundColor: COLORS.accent }}
+          >
+            <Plus size={16} /> Agregar producto
+          </button>
+        </div>
       </div>
 
       {newItem && (
@@ -485,6 +495,61 @@ export function Inventario({ menuItems, onUpdateMenuItem, onCreateMenuItem, onDe
         </div>
       )}
 
+      {/* Modal de edición de precios */}
+      {showPriceEditor && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl p-6 w-full max-w-4xl max-h-[80vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-bold" style={{ color: COLORS.dark }}>
+                Editor de Precios - Productos Inventariables
+              </h3>
+              <button
+                onClick={() => setShowPriceEditor(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {inventariableItems.map((item) => (
+                <div key={item.id} className="border border-gray-200 rounded-lg p-4">
+                  <h4 className="font-medium mb-2">{item.nombre}</h4>
+                  <p className="text-sm text-gray-600 mb-2">{item.categoria}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm">Precio por {item.unidadMedida}:</span>
+                    <input
+                      type="number"
+                      min="0"
+                      step="100"
+                      value={item.precio}
+                      onChange={(e) => {
+                        const newPrice = parseFloat(e.target.value) || 0;
+                        onUpdateMenuItem({ ...item, precio: newPrice });
+                      }}
+                      className="w-24 px-2 py-1 border border-gray-300 rounded text-sm"
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Stock: {item.stock} {item.unidadMedida}
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-6 flex justify-end">
+              <button
+                onClick={() => setShowPriceEditor(false)}
+                className="px-4 py-2 rounded-lg text-white font-medium"
+                style={{ backgroundColor: COLORS.dark }}
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Lista de productos */}
       <div className="space-y-8">
         {inventariableItems.length > 0 && (inventoryFilter === 'all' || inventoryFilter === 'inventariables') && (
@@ -517,7 +582,7 @@ export function Inventario({ menuItems, onUpdateMenuItem, onCreateMenuItem, onDe
                 </div>
               );
             })}
-            </div>
+          </div>
         )}
         
         {filteredItems.length === 0 && (
